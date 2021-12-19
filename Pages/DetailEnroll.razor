@@ -1,0 +1,30 @@
+@page "/detailenroll/{id}"
+
+@if (Enroll == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+<h3> Show Enrollment </h3>
+<a href = "" type="button" class="btn btn-outline-primary">Create New</a><br><br>
+<table class="table bg-light" >
+    <thead class="thead-dark">
+        <tr>
+            <th>CourseID</th>
+            <th>Title </th>
+            <th>Credits </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var en in Enroll)
+        {
+            <tr>
+            <td>@en.courseID</td>
+            <td>@en.title</td>
+            <td>@en.credits</td>
+            </tr> 
+        } 
+    </tbody>
+</table>
+}

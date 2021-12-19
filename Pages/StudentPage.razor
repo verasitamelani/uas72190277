@@ -1,0 +1,32 @@
+@page "/studentpage"
+  
+<h3> List Of Student </h3>
+<a href = "/addst" type="button" class="btn btn-outline-primary">Create New</a><br><br>
+<table class="table bg-light" >
+    <thead class="thead-dark">
+        <tr>
+            <th>Nim</th>
+            <th>Nama Depan </th>
+            <th>Nama Belakang </th>
+            <th>Tanggal Masuk </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var st in Student)
+        {
+            <tr>
+            <td>@st.studentID</td>
+            <td>@st.firstName</td>
+            <td>@st.lastName</td>
+            <td>@st.enrollmentDate</td>
+            <td>
+                <a href ="@($"detailSt/{st.studentID}")" type="button" class="btn btn-outline-info">Detail</a>
+                <a href ="@($"detailenroll/{st.studentID}")" type="button" class="btn btn-outline-primary">Enrol</a>
+                <a href ="@($"editSt/{st.studentID}")" type="button" class="btn btn-outline-warning">Edit</a>
+                <a href ="@($"delete/{st.studentID}")" type="button" class="btn btn-outline-danger">Delete</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>

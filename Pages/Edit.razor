@@ -1,0 +1,39 @@
+@page "/editSt/{id}"
+
+<EditForm Model="@Student" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator/>
+    <h2> Edit</h2>
+    <h5> Student </h5>
+    <hr>
+    <div class = "form-group row">
+        <label for="studentID" class="col-sm-2 col-form-label">
+            Nim
+        </label>
+        <div class="col-sm-10"> <InputText id="studentID" class="form-control" disabled
+            @bind-Value="Student.studentID"/> </div>
+    </div>
+    <div class = "form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Nama Depan
+        </label>
+        <div class="col-sm-10"> <InputText id="firstName" class="form-control" placeholder="nama depan"
+            @bind-Value="Student.firstName"/> </div>
+            <ValidationMessage For="@(()=>Student.firstName)"/>
+    </div>
+    <div class = "form-group row">
+        <label for="lastName" class="col-sm-2 col-form-label">
+            Nama Belakang
+        </label>
+        <div class="col-sm-10"> <InputText id="lastName" class="form-control" placeholder="nama belakang"
+            @bind-Value="Student.lastName"/> </div>
+            <ValidationMessage For="@(()=>Student.lastName)"/>
+    </div>
+    <div class = "form-group row">
+        <label for="enrollmentDate" class="col-sm-2 col-form-label">
+            Tanggal Masuk
+        </label>
+        <div class="col-sm-10"> <InputDate id="enrollmentDate" class="form-control"
+            @bind-Value="Student.enrollmentDate"/> </div>
+    </div>
+    <button class="btn btn-primary" type="submit"> Save </button>
+</EditForm>

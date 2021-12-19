@@ -1,0 +1,29 @@
+@page "/detailSt/{id}"
+
+@if (Student == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+
+<h2>Details</h2>
+<h5>Student</h5>
+<hr>
+<p><b>Nim</b><span class="tab4"></span> @Student.studentID</p>
+<p><b>Nama Depan</b> <span class="tab3"></span>@Student.firstName</p>
+<p><b>Nama Belakang</b> <span class="tab"></span> @Student.lastName</p>
+<p><b>Tanggal Masuk </b><span class="tab"></span> @Student.enrollmentDate</p>
+<hr>
+
+<table>
+    <tr>
+        <td>
+            <a href ="@($"editSt/{Student.studentID}")" type="button" class="btn btn-outline-warning">Edit</a>
+            <a href ="/studentpage" type="button" class="btn btn-outline-primary">Back To List</a>
+        </td>
+    </tr>
+</table>
+
+
+}
